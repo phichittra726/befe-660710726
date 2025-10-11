@@ -19,7 +19,7 @@ import (
 	ginSwagger "github.com/swaggo/gin-swagger"
 )
 
-// ---------- Struct ----------
+
 
 type ErrorResponse struct {
 	Message string `json:"message"`
@@ -36,7 +36,7 @@ type Book struct {
 	UpdatedAt time.Time `json:"updated_at"`
 }
 
-// ---------- Database ----------
+
 
 var db *sql.DB
 
@@ -74,7 +74,7 @@ func initDB() {
 	log.Println("successfully connect to database")
 }
 
-// ---------- Handlers ----------
+
 
 // @Summary Get all books
 // @Description Retrieve all books from the database
@@ -271,7 +271,7 @@ func seedDatabase() {
 
 	log.Println("Database seeded with initial data successfully!")
 }
-// ---------- Swagger Info ----------
+
 
 // @title           Bookstore API Example
 // @version         1.0
@@ -286,10 +286,10 @@ func main() {
 	r := gin.Default()
 	r.Use(cors.Default())
 
-	// Swagger docs route
+	
 	r.GET("/docs/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 
-	// Health check
+	
 	r.GET("/health", func(c *gin.Context) {
 		if err := db.Ping(); err != nil {
 			c.JSON(http.StatusServiceUnavailable, gin.H{"message": "unhealthy", "err": err})
@@ -298,7 +298,7 @@ func main() {
 		c.JSON(http.StatusOK, gin.H{"message": "healthy"})
 	})
 
-	// API routes
+	
 	api := r.Group("/api/v1")
 	{
 		api.GET("/books", getAllBooks)
