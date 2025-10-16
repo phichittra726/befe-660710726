@@ -7,7 +7,7 @@ export const booksData = [
     category: 'fiction',
     price: 299,
     originalPrice: 399,
-    coverImage: './images/books/gatsby.jpg',
+    coverImage: '/images/books/gatsby.jpg',
     rating: 4.5,
     reviews: 234,
     discount: 25,

@@ -1,5 +1,5 @@
 services:
-  fontend:
+  frontend:
     build: ./mybookstore102
     ports:
       - "3001:80"
@@ -10,3 +10,5 @@ services:
       timeout: 10s
       retries: 3
       start_period: 40s
+
+    

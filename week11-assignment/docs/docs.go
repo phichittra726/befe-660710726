@@ -432,8 +432,8 @@ var SwaggerInfo = &swag.Spec{
 	Description:      "This is a simple example of using Gin with Swagger.",
 	InfoInstanceName: "swagger",
 	SwaggerTemplate:  docTemplate,
-	// LeftDelim:        "{{",
-	// RightDelim:       "}}",
+	LeftDelim:        "{{",
+	RightDelim:       "}}",
 }
 
 func init() {
