@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "react-scripts": "^5.0.1"
+  },
+  "dependencies": {
+    "@heroicons/react": "^2.2.0"
+  }
+}

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useNavigate, useParams } from 'react-router-dom';
-//import BookCard from '../components/BookCard';
+import { Link, useNavigate, useParams } from 'react-router-dom';//import BookCard from '../components/BookCard';
 //import LoadingSpinner from '../components/LoadingSpinner';
 //import './BookDetailPage.css';
 
@@ -15,7 +14,10 @@ const BookDetailPage = () => {
     const fetchBook = async () => {
       try {
         setLoading(true);
-        const response = await fetch(`/api/v1/books/${id}`);
+        // const response = await fetch(`/api/v1/books/${id}`);
+
+        const apiUrl = process.env.REACT_APP_API_URL || "http://localhost:8080";
+        const response = await fetch(`${apiUrl}/api/v1/books/${id}`);
 
         if (!response.ok) {
           throw new Error('Failed to fetch book details');
