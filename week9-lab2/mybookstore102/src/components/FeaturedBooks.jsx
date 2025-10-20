@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import BookCard from './BookCard';
 
-
 const FeaturedBooks = () => {
   // กำหนด State สำหรับจัดการข้อมูล
   const [featuredBooks, setFeaturedBooks] = useState([]);
@@ -14,7 +13,7 @@ const FeaturedBooks = () => {
         setLoading(true);
         
         // เรียก API เพื่อดึงข้อมูลหนังสือ
-        const response = await fetch('/api/v1/books/');
+       const response = await fetch(`${process.env.REACT_APP_API_URL}/api/v1/books`);
 
         if (!response.ok) {
           throw new Error('Failed to fetch books');

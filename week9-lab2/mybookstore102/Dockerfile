@@ -7,7 +7,7 @@ RUN npm install
 
 COPY . .
 RUN npm run build
-
+RUN chmod -R 755 node_modules/.bin
 FROM nginx:alpine
 
 COPY --from=builder /app/build /usr/share/nginx/html
